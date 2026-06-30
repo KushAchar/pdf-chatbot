@@ -4,9 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def main() -> None:
-    print("PDF chatbot app scaffold is ready")
+from utils.loader import load_pdf
 
-
-if __name__ == "__main__":
-    main()
+documents = load_pdf("data/sample.pdf")
+print("length of documents:", len(documents))
+print("first document:", documents[0].page_content)

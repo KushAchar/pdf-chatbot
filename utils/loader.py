@@ -1,6 +1,8 @@
 from pathlib import Path
 
+from langchain_community.document_loaders import PyPDFLoader
 
-def load_pdf(file_path: str):
-    """Placeholder for PDF loading logic."""
-    return Path(file_path)
+def load_pdf(pdf_path):
+    loader = PyPDFLoader(pdf_path)
+    documents = loader.load()
+    return documents
